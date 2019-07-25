@@ -6,7 +6,7 @@ function Item(props) {
             <img src={props.avatar} alt={props.name + "avatar"}/>
             <div className="details">
                 <h2>{props.name}</h2>
-                <p><a href={props.url}>{props.url}</a></p>
+                <p><a href={props.url}>{"Access to repository"}</a></p>
             </div>
         </div>
     );

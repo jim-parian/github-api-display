@@ -35,6 +35,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
+        <h1>Github most popular users</h1>
         <ApiForm handleFormSubmit={this.handleFormSubmit}></ApiForm>
         <DisplaySelector displaySelector={this.state.displaySelector} handleDisplaySelectorClick={this.handleDisplaySelectorClick}></DisplaySelector>
         <ItemList displaySelector={this.state.displaySelector} items={this.state.developers}/>
