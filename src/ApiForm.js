@@ -1,10 +1,11 @@
 import React from 'react';
+import './ApiForm.css'
 
 class ApiForm extends React.Component {
 
   searchSubstring = 'tom'
   minRepositories = 20
-  minFollowers = 500
+  minFollowers = 100
 
   constructor(props) {
     super(props);
@@ -47,8 +48,8 @@ class ApiForm extends React.Component {
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit} onReset={this.handleReset}>
-        <div>{'Github Api Form'}</div>
+      <form onSubmit={this.handleSubmit} onReset={this.handleReset} className="form-inline">
+        {/* <div>{'Github Api Form'}</div> */}
         <label>
           {'Search sub-string (user name) : '}
           <input
@@ -57,9 +58,9 @@ class ApiForm extends React.Component {
             value={this.state.searchSubstring}
             onChange={this.handleInputChange} />
         </label>
-        <br />
+        {/* <br /> */}
         <label>
-          {'Minimum number of repositories : '}
+          {'Min repositories : '}
           <input
             name="minRepositories"
             type="number"
@@ -67,21 +68,23 @@ class ApiForm extends React.Component {
             onChange={this.handleInputChange} />
         </label>
         <label>
-          {'Minimum number of followers : '}
+          {'Min followers : '}
           <input
             name="minFollowers"
             type="number"
             value={this.state.minFollowers}
             onChange={this.handleInputChange} />
         </label>
-        <input
+        <button
           name="submit"
           type="submit"
-          value="submit" />
-        <input
+          className="form-button-run"
+          >Run</button>
+        <button
           name="reset"
           type="reset"
-          value="reset" />
+          className="form-button-reset"
+         >Reset</button>
       </form>
     );
   }

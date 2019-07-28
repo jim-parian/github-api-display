@@ -14,7 +14,7 @@ class ItemList extends React.Component {
                     name={item.login}
                     url={item.html_url}
                 />
-                    ) : "Please launch the request"}
+                    ) : this.props.emptyMessage}
             </div>
         );
     }
